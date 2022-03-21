@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: production
     steps:
-      - uses: ashviswam/CommonActions/actions/workflows/main.yml
+      - uses: ashviswam/CommonActions/actions/workflows/main.yml@349512a61627faecf518a148464e1a3fb066d9d7
         with:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
   build:
