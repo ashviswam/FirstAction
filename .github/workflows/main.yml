@@ -16,10 +16,6 @@ on:
 jobs:
   reusable_workflow_job:
     uses: ashviswam/CommonActions/.github/workflows/main.yml@master
-    with:
-      username: mona
-      secrets:
-        token: ${{ secrets.GH_TOKEN }}
 
   build:
     name: Build
