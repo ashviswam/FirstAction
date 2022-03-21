@@ -4,7 +4,7 @@ name: CI
 
 # Controls when the workflow will run
 on:
-  # Triggers the orkflow on push or pull request events but only for the main branch
+  # Triggers the workflow on push or pull request events but only for the main branch
   push:
     branches: [ feature ]
 
@@ -16,8 +16,8 @@ on:
 jobs:
   reusable_workflow_job:
     uses: ashviswam/CommonActions/.github/workflows/main.yml@master
-    with :
-     GH_TOKEN: ${{ secrets.GH_TOKEN }}
+    with:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
   build:
     name: Build
