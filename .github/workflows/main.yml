@@ -24,7 +24,7 @@ jobs:
         uses: devops-infra/action-pull-request@v0.4.2
         with:
           github_token: ${{ secrets.GH_TOKEN }}
-          target_branch: main
+          target_branch: master
           title: My pull request
           assignee: Ashviswam
           label: enhancement
