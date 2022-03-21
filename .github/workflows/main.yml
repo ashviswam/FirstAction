@@ -14,22 +14,13 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  updateAuthors:
+  reusable_workflow_job:
     runs-on: ubuntu-latest
+    environment: production
     steps:
-      - uses: actions/checkout@v2
+      - uses: ashviswam/CommonActions/actions/workflows/main.yml@v1
         with:
-          fetch-depth: 0
-      - name: Run the Action
-        uses: devops-infra/action-pull-request@v0.4.2
-        with:
-          github_token: ${{ secrets.GH_TOKEN }}
-          target_branch: master
-          title: My pull request
-          assignee: Ashviswam
-          label: enhancement
-          draft: true
-          get_diff: true
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
   build:
     name: Build
     runs-on: ubuntu-latest
